@@ -1,3 +1,5 @@
+#깨짐 방지 위한 다국어 버전
+
 while 1:
     print('\n  Chose your language please.\n  언어를 선택하십시오.\n')
 
