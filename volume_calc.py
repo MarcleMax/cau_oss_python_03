@@ -1,3 +1,5 @@
+#기본 버전
+
 lenth = float(input('가로를 입력해 주십시오: '))
 width = float(input('세로를 입력해 주십시오: '))
 height = float(input('높이를 입력해 주십시오: '))
