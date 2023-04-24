@@ -1,5 +1,5 @@
 ﻿def add(x, y):	return(x, y, x + y)
-def sub(x, y):	return(x, y, x + y)
+def sub(x, y):	return(x, y, x - y)
 def arithmetic_ops(op):
     num1 = int(input("input 1st number:"))
     num2 = int(input("input 2nd number:"))
