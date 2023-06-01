@@ -1,31 +1,91 @@
 import math
 
 class line:
-	'''
-	1. Class 'line' is a module for generating and accessing the length of a line, preparing for the next operations.
-	2. It has two functions which are 'set_length' and 'get_length'.
-	3. As a class, it's better to be named as 'Line' but we just ignore it here.
-	'''
-	def __init__(self, length=0):
-		''' '__init__' is for initalizing the value of line, while the value is '0'. '''
-		self.__length = length
+    """
+    A class representing a line with width and height.
+    """
 
-	def set_length(self, length):
-		''' 'set_length' is to set the value of the line. '''
-		self.__length = length
+    def __init__(self, width=0, height=0):
+        """
+        Initialize a line object with given width and height.
 
-	def get_length(self):
-		''' 'get_length' is to get the value of the line for calculating later. '''
-		return self.__length
+        Parameters:
+        - width (float or int): The width of the line (default: 0).
+        - height (float or int): The height of the line (default: 0).
+        """
+        self.__width = width
+        self.__height = height
 
-def area_square(length):
-	''' 'area_square' is to calculate: the area of a square, formed by the line we input as sides. '''
-	return length ** 2
+    def set_length(self, width, height):
+        """
+        Set the width and height of the line.
 
-def area_circle(length):
-	''' 'area_circle' is to calculate: the area of a circle, formed by the line we input as radius. '''
-	return length ** 2 * math.pi
+        Parameters:
+        - width (float or int): The new width of the line.
+        - height (float or int): The new height of the line.
+        """
+        self.__width = width
+        self.__height = height
 
-def area_regular_triangle(length):
-	''' 'area_regular_triangle' is to calculate: the area of a regular triangle, formed by the line we input as sides. '''
-	return length ** 2 * (math.sqrt(3) / 4)
+    def get_length(self):
+        """
+        Get the width and height of the line.
+
+        Returns:
+        - tuple: A tuple containing the width and height of the line.
+        """
+        return self.__width, self.__height
+
+def area_rectangle(width, height):
+    """
+    Calculate the area of a rectangle.
+
+    Parameters:
+    - width (float or int): The width of the rectangle.
+    - height (float or int): The height of the rectangle.
+
+    Returns:
+    - float: The calculated area of the rectangle.
+
+    Raises:
+    - ValueError: If either width or height is less than or equal to zero.
+    """
+    if width <= 0 or height <= 0:
+        raise ValueError("Width and height must be positive.")
+    return width * height
+
+def area_ellipse(width, height):
+    """
+    Calculate the area of an ellipse.
+
+    Parameters:
+    - width (float or int): The major axis (width) of the ellipse.
+    - height (float or int): The minor axis (height) of the ellipse.
+
+    Returns:
+    - float: The calculated area of the ellipse.
+
+    Raises:
+    - ValueError: If either width or height is less than or equal to zero.
+    """
+    if width <= 0 or height <= 0:
+        raise ValueError("Width and height must be positive.")
+    return (width * height) * math.pi
+
+def area_right_triangle(width, height):
+    """
+    Calculate the area of a right triangle.
+
+    Parameters:
+    - width (float or int): The base width of the triangle.
+    - height (float or int): The height of the triangle.
+
+    Returns:
+    - float: The calculated area of the right triangle.
+
+    Raises:
+    - ValueError: If either width or height is less than or equal to zero.
+    """
+    if width <= 0 or height <= 0:
+        raise ValueError("Width and height must be positive.")
+    return (width * height) / 2
